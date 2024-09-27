@@ -1,0 +1,42 @@
+Topic I - ACD:
+TD: Read the ACD paper again
+1 DC based ACD.
+1.1 Use DCs to find a minimal column multiplicity.
+TD: Read "Scalable Logic Rewriting Using Don’t Cares"
+Q: Do you know which algorithms might solve this problem most efficient?
+Q: What other things about the composition itself might be optimized?
+
+1.2 DC based Resynthesis engine.(Cut enumeration, windowing, don't care extraction (simulation or clauses), boolean decomposition, replacing) (Refactoring engine?)
+
+TD: Read the mfs paper and take a look at the code. How is it implemented.
+
+Statement: ACD can be built into a resynthesis engine. If it is enabled with DCs it needs DC extraction.
+Q: Can mfs or some other resynthesis engine be used as base for an ACD based resynthesis engine?
+
+Statement: Simulation based engines as in "A Simulation-Guided Paradigm for Logic Synthesis and Verification" can be used.
+Q: How big can the windows be? How big the cuts? Can there something be simplified for the resynthesis sngine?
+
+Statement: My goal is to not only compare fully integrated algorithms, but integrate the strategies into the same resynthesis engine. E.g. try withour DCs and compare to lutpack strategy (But in the same engine!).
+Q: Can it be built in a modular way, so that i might select 1. the dont care extraction, 2. the decomposition strategy? So i can only change and afterwards also optimize single modules of the resynthesis engine?
+
+Statement: ACDs search space can be pruned if used for cascade synthesis, which is using a predefined structure.
+Q: Is there a use-case in mind, where such search space pruning can be used for resynthesis or even maybe some other algorithm?
+
+1.3 DC based Resynthesis engine.
+TD: Read the paper for transtoch/transduction
+Q: Once a resynthesis engine exists, which protocolls (transtoch, transduction) can make use of it?
+Q: Could it be, that transtoch or transduction might need modification so that they work better with ACD decomposition?
+Q: Does it have another use as well?
+
+1.4 Statistical analysis of heuristics (area and delay) in LS vs after TM
+Q: In the paper it has the best results to use ACD then st; dch -f; if -K 6. It is reasoned, that ACD produces better structures for mapping. Can this be expressed somehow?
+Q: If this can be expressed, then it could already be used in LS as a heuristic, right?
+Q: what are tools that are used here?
+Q: Did anyone with background in statistics try this out?
+Q: How much is the slow down - reward for getting more accurate delay/power models in the technology mapper? (Can we use capacities, things usually used in post-mapping optimization)
+
+1.5 Mapping into LUT cascades
+Q: Do you have a project there already?
+Q: Do you use ACD?
+Q: Do you use BDD ordering?
+Q: Are there open projects to think about in the future?
